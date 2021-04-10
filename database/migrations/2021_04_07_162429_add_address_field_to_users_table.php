@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAppointmentsTable extends Migration
+class AddAddressFieldToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateAppointmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('appointments', function (Blueprint $table) {
-            $table->id();
-            $table->integer('customer_id');
-            $table->integer('organizer_id');
-            $table->datetime('scheduletime');
+        Schema::table('users', function (Blueprint $table) {
+             $table->string('address');
+            //
         });
     }
 
@@ -28,6 +26,9 @@ class CreateAppointmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appointments');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('address');
+            //
+        });
     }
 }

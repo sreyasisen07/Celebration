@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2021 at 12:58 PM
+-- Generation Time: Apr 10, 2021 at 06:20 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `celebration`
+-- Database: `test1`
 --
 
 -- --------------------------------------------------------
@@ -58,7 +58,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2021_03_27_110112_create_permission_tables', 2),
-(5, '2021_03_27_110224_create_products_table', 3);
+(5, '2021_03_27_110224_create_products_table', 3),
+(6, '2021_04_07_160254_add_phone_field_to_users_table', 4),
+(7, '2021_04_07_162429_add_address_field_to_users_table', 5),
+(8, '2021_04_10_133904_create_users_table', 6),
+(9, '2021_04_10_134903_create_users_table', 7),
+(10, '2021_04_10_140248_create_users_table', 8);
 
 -- --------------------------------------------------------
 
@@ -90,7 +95,9 @@ CREATE TABLE `model_has_roles` (
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (1, 'App\\Models\\User', 1),
-(2, 'App\\Models\\User', 2);
+(2, 'App\\Models\\User', 1),
+(2, 'App\\Models\\User', 2),
+(2, 'App\\Models\\User', 3);
 
 -- --------------------------------------------------------
 
@@ -224,6 +231,12 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `provider` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `provider_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `access_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -233,9 +246,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'jhimel', 'jhimel@gmail.com', NULL, '$2y$10$wI2tH0ouzOf0w.Ulek5isORRZPHvdXxeZiNcIrNT4npTbRoijWQAe', NULL, '2021-03-27 05:26:35', '2021-03-27 05:26:35'),
-(2, 'raihan', 'raihan@gmail.com', NULL, '$2y$10$7WyyIwOA2x2GRMkVSr7NdeZoy19zAC7bL8ecv3E/0JRpxHDWkZ.La', NULL, '2021-03-27 05:32:29', '2021-03-27 05:32:29');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `phone`, `address`, `avatar`, `provider`, `provider_id`, `access_token`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'jhimel', 'iqbalahmedjhimel@gmail.com', NULL, '$2y$10$W7JvmKzATsVDf7dB8.HNN.U6JsOOln85467fIxg/9rkGhFX8P9xu.', '01767656322', 'Dhaka', NULL, NULL, NULL, NULL, NULL, '2021-04-10 08:04:12', '2021-04-10 08:04:12');
 
 --
 -- Indexes for dumped tables
@@ -322,7 +334,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -346,7 +358,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBillingsTable extends Migration
+class AddPhoneFieldToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateBillingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('billings', function (Blueprint $table) {
-            $table->id();
-            $table->integer('customer_id');
-            $table->integer('amount');
-            $table->string('method');
-            $table->string('status');
+        Schema::table('users', function (Blueprint $table) {
+            $table->bigInteger('phone');
+            //
         });
     }
 
@@ -29,6 +26,9 @@ class CreateBillingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('billings');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('phone');
+            //
+        });
     }
 }
