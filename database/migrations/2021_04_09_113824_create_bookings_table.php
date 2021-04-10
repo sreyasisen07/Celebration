@@ -15,7 +15,14 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('customer_id');
+            $table->string('location');
+            $table->integer('organizer_id');
+            $table->datetime('booking_date');
+            $table->datetime('event_date');
+            $table->integer('billing_id');
+            $table->integer('productorder_id')->nullable();
+            
         });
     }
 
