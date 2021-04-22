@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +29,25 @@ Route::get('about', function() {
 Route::get('faq', function(){
     return view('faq');
 })->name('faq');
+Route::get('eventcategoryproducts', function(){
+    return view('profiles.eventcategoryproducts');
+})->name('eventcategoryproducts');
+Route::get('/customermyprofile', function(){
+    return view('profiles.customermyprofile');
+})->name('customermyprofile');
+Route::get('/providermyprofile', function(){
+    return view('profiles.providermyprofile');
+})->name('providermyprofile');
+
+Route::get('/reviewpage', function(){
+    return view('profiles.reviewpage');
+})->name('reviewpage');
+Route::get('/customerviewingproviderpage', function(){
+    return view('profiles.customerviewingproviderpage');
+})->name('customerviewingproviderpage');
+
+Route::get('/review',[ReviewController::class,'index'])->name('review');
+Route::post('/review',[ReviewController::class,'store']);
 
 Auth::routes();
 
