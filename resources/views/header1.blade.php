@@ -4,21 +4,21 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div id="logo">
-        <a href="{{Route('welcome')}}"><img src="img/logo1.png"  style="height: 32px ; width: 126px;"alt=""></a>
+        <a href="{{ route('welcome')}}"><img src="{{ asset('img/logo1.png') }}"  style="height: 32px ; width: 126px;"alt=""></a>
 
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-        @guest
 
 
-          <li><a class="nav-link scrollto active" href="{{Route('welcome')}}">Home</a></li>
-          <li><a class="nav-link scrollto" href="{{ Route('about') }}">About</a></li>
-          <li><a class="nav-link scrollto" href="{{Route('faq')}}">FAQ</a></li>
+
+          <li><a class="nav-link scrollto active" href="{{ route('welcome')}}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('about') }}">About</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('faq')}}">FAQ</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
 
-         @else
+
           <li class="dropdown"><a href="#"><span>Event Catagories</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Wedding</a></li>
@@ -49,14 +49,11 @@
 
             </ul>
           </li>
-
-                    <li><a class="nav-link scrollto" href="{{ route('users.index') }}">Users</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('roles.index') }}">Roles</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('products.index') }}">Products</a></li>
-                    <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
-                    <span> {{ Auth::user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
+            @if(Auth::guard('admin')->check())
+                <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
+                    <span> {{ Auth::guard('admin')->user()->username }} </span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                    <li> <a class="dropdown-item" href="{{ route('logout') }}"
+                    <li> <a class="dropdown-item" href="{{ route('admin.logout') }}"
                                                  onclick="event.preventDefault();
                                                                document.getElementById('logout-form').submit();">
                                                   {{ __('Logout') }}
@@ -64,7 +61,7 @@
                                               </li>
 
 
-                                              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                              <form id="logout-form" action="{{ route('admin.logout') }}" method="POST">
                                                   @csrf
                                               </form>
 
@@ -73,9 +70,53 @@
 
 
                                           </li>
+                @elseif(Auth::guard('customer')->check())
+                <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
+                        <span> {{ Auth::guard('customer')->user()->username }} </span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li> <a class="dropdown-item" href="{{ route('customer.logout') }}"
+                                onclick="event.preventDefault();
+                                                               document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </li>
 
 
-          @endguest
+                        <form id="logout-form" action="{{ route('customer.logout') }}" method="POST">
+                            @csrf
+                        </form>
+
+
+                    </ul>
+
+
+                </li>
+            @elseif(Auth::guard('provider')->check())
+                <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
+                        <span> {{ Auth::guard('provider')->user()->username }} </span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li> <a class="dropdown-item" href="{{ route('provider.logout') }}"
+                                onclick="event.preventDefault();
+                                                               document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </li>
+
+
+                        <form id="logout-form" action="{{ route('provider.logout') }}" method="POST">
+                            @csrf
+                        </form>
+
+
+                    </ul>
+
+
+                </li>
+@else       <li><a class="nav-link scrollto" href="{{ route('login') }}">Login</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('customer.register') }}">Register</a></li>
+                @endif
+
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -89,13 +130,10 @@
       <h1>Welcome to Celebration</h1>
       <h2>Celebrate events efficiently</h2>
 
-      @guest
-        <a href="{{route('login')}}" class="btn-get-started">Sign in</a>
-        <a href="{{route('register')}}" class="btn-get-started">Register</a>
-      @else
+
         <p>You are logged in already.</p>
         <p> please continue to use service </p>
         <p> <i>This page is under construction </i> </p>
-      @endguest
+
     </div>
   </section><!-- End Hero Section -->
