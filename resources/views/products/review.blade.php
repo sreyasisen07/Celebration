@@ -45,11 +45,10 @@
   <div class="list-group" >
                      
    
-    <button type="button" class="list-group-item list-group-item-action" style="background-color:#4f4cae;color:white; text-align:center">About</button>
-    <button type="button" class="list-group-item list-group-item-action" style="background-color:#4f4cae;color:white; text-align:center">Contact Details</button>
-    <button type="button" class="list-group-item list-group-item-action" style="background-color:#4f4cae;color:white; text-align:center">Gallery</button>
-    <button type="button"  class="list-group-item list-group-item-action" style="background-color:#4f4cae;color:white; text-align:center">Reviews</button>
-    
+  <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">About</a>
+    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Contact Details</a>
+    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Gallery</a>
+    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Reviews</a>
    
   </div>
 

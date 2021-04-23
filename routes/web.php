@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\CustomerViewingProviderController;
+
 
 
 /*
@@ -29,10 +32,20 @@ Route::get('about', function() {
 Route::get('faq', function(){
     return view('faq');
 })->name('faq');
+Route::get('faq', function(){
+    return view('faq');
+})->name('faq');
+
+
+
+
 
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/review', [ReviewController::class, 'index'])->name('review');
+Route::get('/customerviewingproviderpage', [CustomerViewingProviderController::class, 'index'])->name('customerviewingproviderpage');
+
 
 
 Route::group(['middleware' => 'prevent-back-history'],function(){
