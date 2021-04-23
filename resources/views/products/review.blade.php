@@ -45,9 +45,9 @@
   <div class="list-group" >
                      
    
-  <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">About</a>
-    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Contact Details</a>
-    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Gallery</a>
+  <a class="btn btn-primary"href="#"  style="background-color:#4f4cae;color:white; text-align:center" role="button">About</a>
+    <a class="btn btn-primary"href="#"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Contact Details</a>
+    <a class="btn btn-primary"href="#"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Gallery</a>
     <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Reviews</a>
    
   </div>

@@ -36,10 +36,10 @@
                                                    
                                 
 
-                                  <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Update Contact Details</a>
-    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">My Inbox</a>
-    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">My View History</a>
-    <a class="btn btn-primary"href="{{route('review')}}"  style="background-color:#4f4cae;color:white; text-align:center" role="button">My Reviews</a>
+                                  <a class="btn btn-primary"href="#"  style="background-color:#4f4cae;color:white; text-align:center" role="button">Update Contact Details</a>
+    <a class="btn btn-primary"href="#"  style="background-color:#4f4cae;color:white; text-align:center" role="button">My Inbox</a>
+    <a class="btn btn-primary"href="#"  style="background-color:#4f4cae;color:white; text-align:center" role="button">My View History</a>
+    <a class="btn btn-primary"href="#"  style="background-color:#4f4cae;color:white; text-align:center" role="button">My Reviews</a>
                                   
                                  
           
