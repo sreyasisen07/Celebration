@@ -51,7 +51,10 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     Route::post('/logout', [App\Http\Controllers\Customer\Auth\LoginController::class, 'logout'])->name('logout');
 
 
-
+        Route::get('/service/all', [App\Http\Controllers\Customer\ServiceController::class,'allservice'])->name('allservice')->middleware('customer');
+        Route::get('/service/booked', [App\Http\Controllers\Customer\ServiceController::class,'showservice'])->name('showservice')->middleware('customer');
+        Route::get('/service/all/{id}', [App\Http\Controllers\Customer\ServiceController::class,'addservice'])->name('addservice')->middleware('customer');
+        Route::get('/service/booked/{id}', [App\Http\Controllers\Customer\ServiceController::class,'deleteservice'])->name('deleteservice')->middleware('customer');
 });
 
     //Admin Routes
@@ -88,6 +91,12 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/login', [App\Http\Controllers\Provider\Auth\LoginController::class, 'showLoginForm'])->name('showlogin');
         Route::post('/login', [App\Http\Controllers\Provider\Auth\LoginController::class, 'login'])->name('login');
         Route::post('/logout', [App\Http\Controllers\Provider\Auth\LoginController::class, 'logout'])->name('logout');
+
+
+        Route::get('/service/add', [App\Http\Controllers\Provider\ServiceController::class,'addservicepage'])->name('addservicepage')->middleware('provider');
+        Route::post('/service/add', [App\Http\Controllers\Provider\ServiceController::class,'addservice'])->name('addservice')->middleware('provider');
+        Route::get('/service/all', [App\Http\Controllers\Provider\ServiceController::class,'allservice'])->name('allservice')->middleware('provider');
+
 
 
 
