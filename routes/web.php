@@ -51,8 +51,17 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     Route::post('/logout', [App\Http\Controllers\Customer\Auth\LoginController::class, 'logout'])->name('logout');
 
 
+        Route::get('/service/all', [App\Http\Controllers\Customer\ServiceController::class,'allservice'])->name('allservice')->middleware('customer');
+        Route::get('/service/booked', [App\Http\Controllers\Customer\ServiceController::class,'showservice'])->name('showservice')->middleware('customer');
+        Route::get('/service/all/{id}', [App\Http\Controllers\Customer\ServiceController::class,'addservice'])->name('addservice')->middleware('customer');
+        Route::get('/service/booked/{id}', [App\Http\Controllers\Customer\ServiceController::class,'deleteservice'])->name('deleteservice')->middleware('customer');
 
-});
+
+        Route::get('/provider', [App\Http\Controllers\Customer\MeetingController::class,'showprovider'])->name('showprovider')->middleware('customer');
+        Route::get('/provider/{id}', [App\Http\Controllers\Customer\MeetingController::class,'showmeeting'])->name('showmeeting')->middleware('customer');
+        Route::post('/provider/{id}', [App\Http\Controllers\Customer\MeetingController::class,'schedulemeeting'])->name('addmeeting')->middleware('customer');
+
+    });
 
     //Admin Routes
     Route::prefix('/admin')->name('admin.')->namespace('admin')->group(function() {
@@ -88,6 +97,17 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         Route::get('/login', [App\Http\Controllers\Provider\Auth\LoginController::class, 'showLoginForm'])->name('showlogin');
         Route::post('/login', [App\Http\Controllers\Provider\Auth\LoginController::class, 'login'])->name('login');
         Route::post('/logout', [App\Http\Controllers\Provider\Auth\LoginController::class, 'logout'])->name('logout');
+
+
+        Route::get('/service/add', [App\Http\Controllers\Provider\ServiceController::class,'addservicepage'])->name('addservicepage')->middleware('provider');
+        Route::post('/service/add', [App\Http\Controllers\Provider\ServiceController::class,'addservice'])->name('addservice')->middleware('provider');
+        Route::get('/service/all', [App\Http\Controllers\Provider\ServiceController::class,'allservice'])->name('allservice')->middleware('provider');
+
+
+        Route::get('/meeting', [App\Http\Controllers\Provider\MeetingController::class,'showmeeting'])->name('showmeeting')->middleware('provider');
+        Route::get('/meeting/{id}', [App\Http\Controllers\Provider\MeetingController::class,'acceptmeeting'])->name('acceptmeeting')->middleware('provider');
+        Route::get('/message', [App\Http\Controllers\Provider\MeetingController::class,'showmessage'])->name('showmessage')->middleware('provider');
+        Route::post('/message/{id}', [App\Http\Controllers\Provider\MeetingController::class,'sendmessage'])->name('sendmessage')->middleware('provider');
 
 
 

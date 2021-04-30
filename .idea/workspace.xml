@@ -4,7 +4,26 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b50db223-186d-4ef4-b150-f7182f4aa34b" name="Default Changelist" comment="" />
+    <list default="true" id="b50db223-186d-4ef4-b150-f7182f4aa34b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/MeetingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/ServiceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Provider/MeetingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Provider/ServiceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customer/addmeeting.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customer/bookservice.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customer/providerlist.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customer/service/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customer/service/booked.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/provider/service/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/provider/service/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/provider/showmeeting.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/provider/showmessage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_09_113957_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_09_113957_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_09_114239_create_services_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_09_114239_create_services_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +166,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/provider" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -155,11 +174,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\Celebration-master\resources\views" />
-      <recent name="D:\Projects\Celebration-master\resources\views\provider" />
-      <recent name="D:\Projects\Celebration-master\resources\views\customer" />
-      <recent name="D:\Projects\Celebration-master\resources\views\admin" />
-      <recent name="D:\Projects\Celebration-master\resources\views\layout" />
+      <recent name="D:\Projects\Celebration-master\Celebration\resources\views\provider" />
+      <recent name="D:\Projects\Celebration-master\Celebration\app\Http\Controllers\Provider" />
+      <recent name="D:\Projects\Celebration-master\Celebration\resources\views\customer" />
+      <recent name="D:\Projects\Celebration-master\Celebration\app\Http\Controllers\Customer" />
+      <recent name="D:\Projects\Celebration-master\Celebration\resources\views\customer\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\Celebration-master\app\Http\Controllers\Customer" />
@@ -187,6 +206,9 @@
       <workItem from="1618995464025" duration="594000" />
       <workItem from="1619071479516" duration="12650000" />
       <workItem from="1619111318554" duration="6596000" />
+      <workItem from="1619197143743" duration="4815000" />
+      <workItem from="1619248755759" duration="11320000" />
+      <workItem from="1619282356739" duration="11930000" />
     </task>
     <servers />
   </component>

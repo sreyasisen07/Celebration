@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicesTable extends Migration
+class CreateMeetingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('meetings', function (Blueprint $table) {
             $table->increments('id')->nullable();
-            $table->string('name');
-            $table->string('capacity')->nullable();
-            $table->string('pricerange');
+            $table->bigInteger('customer_id')->unsigned();
+            $table->bigInteger('provider_id')->unsigned();
+            $table->date('scheduledtime');
+            $table->string('status')->default('Pending');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('meetings');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\provider;
+namespace App\Http\Controllers\Admin\Provider;
 
 use App\Models\Provider;
 use App\Http\Controllers\Controller;
